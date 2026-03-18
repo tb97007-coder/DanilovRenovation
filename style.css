@@ -1,0 +1,859 @@
+/* =========================================
+   🎨 Стиль: Тёплые коричневые тона
+   Сайт: Алексей Данилов - Отделка и ремонт
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    color: #4E342E;
+    background: linear-gradient(180deg, #EFEBE9 0%, #F5F5F5 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Шапка --- */
+header {
+    background: linear-gradient(135deg, #5D4037 0%, #795548 100%);
+    color: #EFEBE9;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo a {
+    text-decoration: none !important;
+    color: #EFEBE9 !important;
+    cursor: pointer;
+}
+
+.logo a:hover {
+    opacity: 0.85;
+}
+
+.logo a:visited {
+    color: #EFEBE9 !important;
+}
+
+.logo h1 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo p {
+    font-size: 13px;
+    opacity: 0.9;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #EFEBE9;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #D7CCC8;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* --- Контейнер --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    flex: 1;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 15px;
+    color: #5D4037;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, #8D6E63, #5D4037);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #795548;
+    margin-bottom: 50px;
+    font-size: 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Кнопки --- */
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #8D6E63 0%, #795548 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(141, 110, 99, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(141, 110, 99, 0.6);
+    background: linear-gradient(135deg, #795548 0%, #5D4037 100%);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #EFEBE9;
+    color: #EFEBE9;
+}
+
+.btn-secondary:hover {
+    background: #EFEBE9;
+    color: #5D4037;
+}
+
+/* --- Hero секция --- */
+.hero {
+    background: linear-gradient(135deg, rgba(93,64,55,0.9) 0%, rgba(121,85,72,0.85) 100%),
+                url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200') center/cover;
+    color: #EFEBE9;
+    padding: 130px 20px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h2 {
+    font-size: 44px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-name {
+    font-size: 28px;
+    font-weight: 600;
+    color: #D7CCC8;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 35px;
+    opacity: 0.95;
+}
+
+/* --- Карточки услуг --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(93, 64, 55, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid #EFEBE9;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(93, 64, 55, 0.15);
+    border-color: #D7CCC8;
+}
+
+.service-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #5D4037;
+}
+
+.service-card p {
+    color: #795548;
+    font-size: 15px;
+}
+
+/* --- Преимущества --- */
+.features {
+    background: linear-gradient(135deg, #795548 0%, #5D4037 100%);
+    color: #EFEBE9;
+    padding: 70px 20px;
+    margin: 40px 0;
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature {
+    padding: 20px;
+}
+
+.feature-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #D7CCC8;
+}
+
+.feature p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* --- Портфолио --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.portfolio-item {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(93, 64, 55, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid #EFEBE9;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(93, 64, 55, 0.2);
+}
+
+.portfolio-info {
+    padding: 25px;
+}
+
+.portfolio-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #5D4037;
+}
+
+.portfolio-info p {
+    color: #795548;
+    font-size: 14px;
+}
+
+/* --- Галерея проектов --- */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background: #FAFAFA;
+    border-top: 1px solid #EFEBE9;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.3);
+}
+
+/* Видео в галерее */
+.gallery-video {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-video .gallery-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-video:hover .gallery-img {
+    transform: scale(1.03);
+}
+
+.video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(93, 64, 55, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.gallery-video:hover .video-play-btn {
+    background: rgba(141, 110, 99, 0.95);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* --- Lightbox --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 52, 46, 0.98);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Видео контейнер */
+.lightbox-video-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lightbox-video-container video {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Кнопки навигации */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #EFEBE9;
+    font-size: 48px;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-weight: 300;
+    line-height: 1;
+    z-index: 1001;
+}
+
+.lightbox-close:hover {
+    color: #D7CCC8;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #EFEBE9;
+    font-size: 48px;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+    transition: color 0.3s;
+    font-weight: 300;
+    z-index: 1001;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: #D7CCC8;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* --- Контакты --- */
+.contacts-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    background: white;
+    padding: 45px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(93, 64, 55, 0.12);
+    border: 1px solid #EFEBE9;
+}
+
+.contacts-info {
+    background: linear-gradient(135deg, #EFEBE9 0%, #F5F5F5 100%);
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    border-left: 4px solid #8D6E63;
+}
+
+.contact-item {
+    margin: 18px 0;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item strong {
+    color: #5D4037;
+    min-width: 110px;
+    font-weight: 600;
+}
+
+.contact-item a {
+    color: #795548;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: #5D4037;
+    text-decoration: underline;
+}
+
+/* --- Форма --- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 22px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5D4037;
+    font-size: 15px;
+}
+
+input, textarea {
+    padding: 14px 18px;
+    border: 2px solid #D7CCC8;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    background: #FAFAFA;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #8D6E63;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(141, 110, 99, 0.15);
+}
+
+input::placeholder, textarea::placeholder {
+    color: #A1887F;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+button[type="submit"] {
+    margin-top: 30px;
+    padding: 16px;
+    background: linear-gradient(135deg, #5D4037 0%, #795548 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(93, 64, 55, 0.5);
+}
+
+/* --- Подвал --- */
+footer {
+    background: linear-gradient(135deg, #4E342E 0%, #3E2723 100%);
+    color: #D7CCC8;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+footer strong {
+    color: #EFEBE9;
+}
+
+/* =========================================
+   📄 Страница "Все работы"
+   ========================================= */
+
+.project-full {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 20px rgba(93, 64, 55, 0.1);
+    overflow: hidden;
+    border: 1px solid #EFEBE9;
+}
+
+.project-header {
+    background: linear-gradient(135deg, #5D4037 0%, #795548 100%);
+    color: #EFEBE9;
+    padding: 30px;
+    text-align: center;
+}
+
+.project-header h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #EFEBE9;
+}
+
+.project-desc {
+    font-size: 16px;
+    opacity: 0.95;
+    margin: 0;
+}
+
+.project-gallery-full {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 30px;
+    background: #FAFAFA;
+}
+
+.gallery-img-large {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+.gallery-img-large:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(93, 64, 55, 0.3);
+}
+
+/* Видео в полной галерее */
+.gallery-video-large {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-video-large .gallery-img-large {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-video-large:hover .gallery-img-large {
+    transform: scale(1.03);
+}
+
+.video-play-btn-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(93, 64, 55, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.gallery-video-large:hover .video-play-btn-large {
+    background: rgba(141, 110, 99, 0.95);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 992px) {
+    .project-gallery-full {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero h2 {
+        font-size: 32px;
+    }
+    
+    .hero-name {
+        font-size: 22px;
+    }
+    
+    .hero p {
+        font-size: 17px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .contacts-wrapper {
+        padding: 30px 25px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 8px 0;
+    }
+    
+    .project-gallery {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 15px;
+    }
+    
+    .gallery-img {
+        height: 200px;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 32px;
+        padding: 10px;
+    }
+    
+    .lightbox-close {
+        font-size: 36px;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-gallery-full {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px;
+    }
+    
+    .gallery-img-large {
+        height: 200px;
+    }
+    
+    .project-header h3 {
+        font-size: 24px;
+    }
+    
+    .video-play-btn-large {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+}/* =========================================
+   📌 Центрированный логотип
+   ========================================= */
+
+.logo-item {
+    grid-column: 1 / -1; /* Растянуть на всю ширину */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-item .portfolio-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-item .portfolio-info h3 {
+    font-size: 24px;
+    color: #5D4037;
+}
+
+.logo-gallery {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: #FAFAFA;
+    width: 100%;
+}
+
+.logo-img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(93, 64, 55, 0.15);
+}
+
+/* Адаптивность для логотипа */
+@media (max-width: 576px) {
+    .logo-img {
+        max-width: 200px;
+    }
+    
+    .logo-item .portfolio-info h3 {
+        font-size: 20px;
+    }
+}

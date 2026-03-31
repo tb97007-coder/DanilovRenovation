@@ -1,8 +1,3 @@
-/* =========================================
-   🎨 Стиль: Тёплые коричневые тона
-   Сайт: Алексей Данилов - Отделка и ремонт
-   ========================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +14,7 @@ body {
     flex-direction: column;
 }
 
-/* --- Шапка --- */
+/* РЁР°РїРєР° */
 header {
     background: linear-gradient(135deg, #5D4037 0%, #795548 100%);
     color: #EFEBE9;
@@ -111,7 +106,7 @@ nav a:hover {
     background: rgba(255,255,255,0.1);
 }
 
-/* --- Контейнер --- */
+/* РљРѕРЅС‚РµР№РЅРµСЂ */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -150,7 +145,7 @@ nav a:hover {
     margin-right: auto;
 }
 
-/* --- Кнопки --- */
+/* РљРЅРѕРїРєРё */
 .btn {
     display: inline-block;
     padding: 14px 35px;
@@ -184,7 +179,7 @@ nav a:hover {
     color: #5D4037;
 }
 
-/* --- Hero секция --- */
+/* Hero СЃРµРєС†РёСЏ */
 .hero {
     background: linear-gradient(135deg, rgba(93,64,55,0.9) 0%, rgba(121,85,72,0.85) 100%),
                 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200') center/cover;
@@ -216,7 +211,7 @@ nav a:hover {
     opacity: 0.95;
 }
 
-/* --- Карточки услуг --- */
+/* РљР°СЂС‚РѕС‡РєРё СѓСЃР»СѓРі */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -256,7 +251,7 @@ nav a:hover {
     font-size: 15px;
 }
 
-/* --- Преимущества --- */
+/* РџСЂРµРёРјСѓС‰РµСЃС‚РІР° */
 .features {
     background: linear-gradient(135deg, #795548 0%, #5D4037 100%);
     color: #EFEBE9;
@@ -294,7 +289,7 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* --- Портфолио --- */
+/* РџРѕСЂС‚С„РѕР»РёРѕ */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -331,7 +326,7 @@ nav a:hover {
     font-size: 14px;
 }
 
-/* --- Галерея проектов --- */
+/* Р“Р°Р»РµСЂРµСЏ РїСЂРѕРµРєС‚РѕРІ */
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -356,7 +351,7 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(93, 64, 55, 0.3);
 }
 
-/* Видео в галерее */
+/* Р’РёРґРµРѕ РІ РіР°Р»РµСЂРµРµ */
 .gallery-video {
     position: relative;
     cursor: pointer;
@@ -399,7 +394,7 @@ nav a:hover {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* --- Lightbox --- */
+/* Lightbox */
 .lightbox {
     display: none;
     position: fixed;
@@ -440,7 +435,7 @@ nav a:hover {
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* Видео контейнер */
+/* Р’РёРґРµРѕ РєРѕРЅС‚РµР№РЅРµСЂ */
 .lightbox-video-container {
     position: relative;
     width: 90%;
@@ -457,7 +452,7 @@ nav a:hover {
     border: none;
 }
 
-/* Кнопки навигации */
+/* РљРЅРѕРїРєРё РЅР°РІРёРіР°С†РёРё */
 .lightbox-close {
     position: absolute;
     top: 20px;
@@ -503,7 +498,7 @@ nav a:hover {
     right: 20px;
 }
 
-/* --- Контакты --- */
+/* РљРѕРЅС‚Р°РєС‚С‹ */
 .contacts-wrapper {
     max-width: 750px;
     margin: 0 auto;
@@ -548,7 +543,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* --- Форма --- */
+/* Р¤РѕСЂРјР° */
 form {
     display: flex;
     flex-direction: column;
@@ -608,7 +603,7 @@ button[type="submit"]:hover {
     box-shadow: 0 8px 25px rgba(93, 64, 55, 0.5);
 }
 
-/* --- Подвал --- */
+/* РџРѕРґРІР°Р» */
 footer {
     background: linear-gradient(135deg, #4E342E 0%, #3E2723 100%);
     color: #D7CCC8;
@@ -626,9 +621,7 @@ footer strong {
     color: #EFEBE9;
 }
 
-/* =========================================
-   📱 АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ
-   ========================================= */
+/*  РђР”РђРџРўРР’РќРћРЎРўР¬ Р”Р›РЇ РњРћР‘РР›Р¬РќР«РҐ */
 
 @media (max-width: 992px) {
     .hero h2 {
@@ -1032,9 +1025,7 @@ footer strong {
     }
 }
 
-/* =========================================
-   📄 Страница "Все работы"
-   ========================================= */
+/* "Р’СЃРµ СЂР°Р±РѕС‚С‹" */
 
 .logo-item {
     grid-column: 1 / -1;

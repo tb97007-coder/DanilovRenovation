@@ -14,7 +14,7 @@ body {
     flex-direction: column;
 }
 
-/* РЁР°РїРєР° */
+/* Шапка */
 header {
     background: linear-gradient(135deg, #5D4037 0%, #795548 100%);
     color: #EFEBE9;
@@ -106,7 +106,7 @@ nav a:hover {
     background: rgba(255,255,255,0.1);
 }
 
-/* РљРѕРЅС‚РµР№РЅРµСЂ */
+/* Контейнер */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -145,7 +145,7 @@ nav a:hover {
     margin-right: auto;
 }
 
-/* РљРЅРѕРїРєРё */
+/* Кнопки */
 .btn {
     display: inline-block;
     padding: 14px 35px;
@@ -179,7 +179,7 @@ nav a:hover {
     color: #5D4037;
 }
 
-/* Hero СЃРµРєС†РёСЏ */
+/* Hero секция */
 .hero {
     background: linear-gradient(135deg, rgba(93,64,55,0.9) 0%, rgba(121,85,72,0.85) 100%),
                 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200') center/cover;
@@ -211,7 +211,7 @@ nav a:hover {
     opacity: 0.95;
 }
 
-/* РљР°СЂС‚РѕС‡РєРё СѓСЃР»СѓРі */
+/* Карточки услуг */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -251,7 +251,7 @@ nav a:hover {
     font-size: 15px;
 }
 
-/* РџСЂРµРёРјСѓС‰РµСЃС‚РІР° */
+/* Преимущества */
 .features {
     background: linear-gradient(135deg, #795548 0%, #5D4037 100%);
     color: #EFEBE9;
@@ -270,12 +270,26 @@ nav a:hover {
 
 .feature {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feature-icon {
     font-size: 42px;
     margin-bottom: 15px;
     display: block;
+    height: 42px;
+    line-height: 42px;
+}
+
+/* SVG иконки */
+.feature svg.feature-icon {
+    display: block;
+    margin: 0 auto 15px;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
 }
 
 .feature h3 {
@@ -289,7 +303,7 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* РџРѕСЂС‚С„РѕР»РёРѕ */
+/* Портфолио */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -326,7 +340,7 @@ nav a:hover {
     font-size: 14px;
 }
 
-/* Р“Р°Р»РµСЂРµСЏ РїСЂРѕРµРєС‚РѕРІ */
+/* Галерея проектов */
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -351,7 +365,7 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(93, 64, 55, 0.3);
 }
 
-/* Р’РёРґРµРѕ РІ РіР°Р»РµСЂРµРµ */
+/* Видео в галерее */
 .gallery-video {
     position: relative;
     cursor: pointer;
@@ -435,7 +449,7 @@ nav a:hover {
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* Р’РёРґРµРѕ РєРѕРЅС‚РµР№РЅРµСЂ */
+/* Видео контейнер */
 .lightbox-video-container {
     position: relative;
     width: 90%;
@@ -452,7 +466,7 @@ nav a:hover {
     border: none;
 }
 
-/* РљРЅРѕРїРєРё РЅР°РІРёРіР°С†РёРё */
+/* Кнопки навигации */
 .lightbox-close {
     position: absolute;
     top: 20px;
@@ -498,7 +512,7 @@ nav a:hover {
     right: 20px;
 }
 
-/* РљРѕРЅС‚Р°РєС‚С‹ */
+/* Контакты */
 .contacts-wrapper {
     max-width: 750px;
     margin: 0 auto;
@@ -543,7 +557,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Р¤РѕСЂРјР° */
+/* Форма */
 form {
     display: flex;
     flex-direction: column;
@@ -603,7 +617,7 @@ button[type="submit"]:hover {
     box-shadow: 0 8px 25px rgba(93, 64, 55, 0.5);
 }
 
-/* РџРѕРґРІР°Р» */
+/* Подвал */
 footer {
     background: linear-gradient(135deg, #4E342E 0%, #3E2723 100%);
     color: #D7CCC8;
@@ -621,7 +635,7 @@ footer strong {
     color: #EFEBE9;
 }
 
-/*  РђР”РђРџРўРР’РќРћРЎРўР¬ Р”Р›РЇ РњРћР‘РР›Р¬РќР«РҐ */
+/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ */
 
 @media (max-width: 992px) {
     .hero h2 {
@@ -755,6 +769,14 @@ footer strong {
     .feature-icon {
         font-size: 32px;
         margin-bottom: 10px;
+        height: 32px;
+        line-height: 32px;
+    }
+    
+    .feature svg.feature-icon {
+        margin: 0 auto 10px;
+        width: 32px;
+        height: 32px;
     }
     
     .feature h3 {
@@ -989,6 +1011,11 @@ footer strong {
         font-size: 24px;
         padding: 5px;
     }
+    
+    .feature svg.feature-icon {
+        width: 28px;
+        height: 28px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -1025,7 +1052,7 @@ footer strong {
     }
 }
 
-/* "Р’СЃРµ СЂР°Р±РѕС‚С‹" */
+/* "Все работы" */
 
 .logo-item {
     grid-column: 1 / -1;

@@ -14,6 +14,7 @@
                 <a href="index.html">
                     <h1>Алексей Данилов</h1>
                 </a>
+                <p>Качественная отделка с душой</p>
             </div>
             <nav>
                 <ul>
@@ -53,36 +54,34 @@
                 <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
 
                 <label for="comment">Комментарий *</label>
-                <textarea id="comment" name="comment" placeholder="Опишите ваш вопрос или пожелания..." required></textarea>
+                <textarea id="comment" name="comment" placeholder="Опишите ваш вопрос или пожелания..." rows="5" required></textarea>
 
                 <button type="submit">Отправить заявку</button>
             </form>
 
             <!-- Сообщение об ошибке -->
-            <div id="errorMessage" style="display: none; margin-top: 20px; padding: 15px; background: #ffebee; border: 1px solid #ef5350; border-radius: 10px; color: #c62828; text-align: center;"></div>
+            <div id="errorMessage" style="display: none; margin-top: 20px; padding: 15px; background: #ffebee; border: 1px solid #ef5350; border-radius: 10px; color: #c62828; text-align: center; font-weight: 500;"></div>
 
             <!-- Сообщение об успехе -->
-            <div id="successMessage" style="display: none; margin-top: 20px; padding: 15px; background: #e8f5e9; border: 1px solid #66bb6a; border-radius: 10px; color: #2e7d32; text-align: center;"></div>
+            <div id="successMessage" style="display: none; margin-top: 20px; padding: 15px; background: #e8f5e9; border: 1px solid #66bb6a; border-radius: 10px; color: #2e7d32; text-align: center; font-weight: 500;"></div>
         </div>
     </div>
 
     <footer>
-        <p>Алексей Данилов — отделка и ремонт в Воронеже</p>
+        <p><strong>Алексей Данилов</strong> — отделка и ремонт в Воронеже</p>
         <p>alexey.danilov1998@mail.ru</p>
         <p style="margin-top: 15px; opacity: 0.8;">&copy; 2026 Все права защищены</p>
     </footer>
 
-    <!-- Скрипт валидации формы -->
+    <!-- Скрипт валидации и отправки формы -->
     <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Получаем значения полей
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const comment = document.getElementById('comment').value.trim();
         
-        // Элементы для сообщений
         const errorMessage = document.getElementById('errorMessage');
         const successMessage = document.getElementById('successMessage');
         
@@ -90,14 +89,14 @@
         errorMessage.style.display = 'none';
         successMessage.style.display = 'none';
         
-        // Проверка: поля не пустые
+        // Проверка на пустые поля
         if (!name || !email || !comment) {
             errorMessage.textContent = 'Пожалуйста, заполните все поля!';
             errorMessage.style.display = 'block';
             return;
         }
         
-        // Проверка: валидный email
+        // Проверка email
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
             errorMessage.textContent = 'Пожалуйста, введите корректный email адрес!';
@@ -105,24 +104,45 @@
             return;
         }
         
-        // Всё верно - показываем приветствие
-        successMessage.innerHTML = `
-            <strong>Спасибо, ${escapeHtml(name)}!</strong><br>
-            Ваша заявка принята.<br>
-            Мы свяжемся с вами по email: <strong>${escapeHtml(email)}</strong><br>
-            <br>
-            <em>Ваш комментарий:</em><br>
-            "${escapeHtml(comment)}"
-        `;
-        successMessage.style.display = 'block';
-        
-        // Очищаем форму
-        this.reset();
-        
-        // Скрываем сообщение через 10 секунд
-        setTimeout(() => {
-            successMessage.style.display = 'none';
-        }, 10000);
+        // Отправка данных на сервер
+        try {
+            const response = await fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, comment })
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                successMessage.innerHTML = `
+                    <strong>Спасибо, ${escapeHtml(name)}!</strong><br>
+                    Ваша заявка принята.<br>
+                    Мы свяжемся с вами по email: <strong>${escapeHtml(email)}</strong><br>
+                    <br>
+                    <em>Ваш комментарий:</em><br>
+                    "${escapeHtml(comment)}"
+                `;
+                successMessage.style.display = 'block';
+                
+                // Очищаем форму
+                this.reset();
+                
+                // Скрываем сообщение через 10 секунд
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 10000);
+            } else {
+                errorMessage.textContent = result.message || 'Ошибка отправки';
+                errorMessage.style.display = 'block';
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+            errorMessage.textContent = 'Ошибка отправки. Попробуйте позже.';
+            errorMessage.style.display = 'block';
+        }
     });
     
     // Функция для защиты от XSS
